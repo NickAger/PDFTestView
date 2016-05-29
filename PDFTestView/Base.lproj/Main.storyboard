@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PDFTestView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="FRQ-GZ-nqc">
+                                <rect key="frame" x="160" y="185" width="280" height="230"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2P-ED-7ZB">
+                                        <rect key="frame" x="74" y="0.0" width="131" height="30"/>
+                                        <state key="normal" title="View in UIWebView"/>
+                                        <connections>
+                                            <action selector="uiWebviewTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WXk-Dt-ITQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehg-2s-BGg">
+                                        <rect key="frame" x="69" y="50" width="141" height="30"/>
+                                        <state key="normal" title="View in WKWebView"/>
+                                        <connections>
+                                            <action selector="wkWebviewTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kOq-2Q-Ycl"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3e-nl-Hsu">
+                                        <rect key="frame" x="42" y="100" width="195" height="30"/>
+                                        <state key="normal" title="View in QLPreviewController"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2pv-hq-xAf">
+                                        <rect key="frame" x="0.0" y="150" width="280" height="30"/>
+                                        <state key="normal" title="View in UIDocumentInteractionController"/>
+                                        <connections>
+                                            <action selector="uiDocumentInteractionControllerTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZaX-ac-YIA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTB-aS-7C9">
+                                        <rect key="frame" x="75" y="200" width="130" height="30"/>
+                                        <state key="normal" title="View in VFRReader"/>
+                                        <connections>
+                                            <action selector="vfrReaderTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8K9-fF-L6o"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FRQ-GZ-nqc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="68W-Xh-nw5"/>
+                            <constraint firstItem="FRQ-GZ-nqc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vM1-Pe-wob"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="39" y="463"/>
+        </scene>
+    </scenes>
+</document>
