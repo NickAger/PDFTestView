@@ -10,9 +10,9 @@ import UIKit
 import NACommonUtils
 import vfrReader
 
-final class ReaderViewControllerDelegateImp: NSObject, ReaderViewControllerDelegate, KeepInMemoryMixin {
+public final class ReaderViewControllerDelegateImp: NSObject, ReaderViewControllerDelegate, KeepInMemoryMixin {
     let urlHolder : SecurityScopedURLHolder
-    var keepInMemory: ReaderViewControllerDelegateImp?
+    public var keepInMemory: ReaderViewControllerDelegateImp?
     
     init(urlHolder: SecurityScopedURLHolder) {
         self.urlHolder = urlHolder
@@ -22,7 +22,8 @@ final class ReaderViewControllerDelegateImp: NSObject, ReaderViewControllerDeleg
     
     // MARK - ReaderViewControllerDelegate
     
-    func dismissReaderViewController(viewController: ReaderViewController!) {
+    public func dismissReaderViewController(viewController: ReaderViewController!) {
+        viewController.dismissViewControllerAnimated(true, completion: nil)
         freeOurselvesFromMemory()
     }
 }

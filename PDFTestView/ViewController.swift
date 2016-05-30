@@ -86,7 +86,6 @@ class ViewController: UIViewController {
             self.docController = UIDocumentInteractionController(URL: urlHolder.fileURL)
             self.docController.delegate = DocumentInteractionControllerDelegateImp(urlHolder: urlHolder, viewController: self)
             self.docController.presentOptionsMenuFromRect(sender.frame, inView: sender.superview!, animated: true)
-            self.docController.presentPreviewAnimated(true)
         }
     }
     
@@ -96,7 +95,6 @@ class ViewController: UIViewController {
             self.docController = UIDocumentInteractionController(URL: urlHolder.fileURL)
             self.docController.delegate = DocumentInteractionControllerDelegateImp(urlHolder: urlHolder, viewController: self)
             self.docController.presentOpenInMenuFromRect(sender.frame, inView: sender.superview!, animated: true)
-            self.docController.presentPreviewAnimated(true)
         }
     }
     
