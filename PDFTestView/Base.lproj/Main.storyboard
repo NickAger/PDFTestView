@@ -17,39 +17,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="FRQ-GZ-nqc">
-                                <rect key="frame" x="160" y="185" width="280" height="230"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="WTU-ui-XI7">
+                                <rect key="frame" x="174" y="360" width="253" height="111"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="UIDocumentInteractionController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3AO-US-b1c">
+                                        <rect key="frame" x="0.0" y="0.0" width="253" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dcv-4q-SY0">
+                                        <rect key="frame" x="101" y="36" width="51" height="30"/>
+                                        <state key="normal" title="options"/>
+                                        <connections>
+                                            <action selector="documentInteractionControllerOptionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kae-y9-nSB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Er0-0h-fzG">
+                                        <rect key="frame" x="84" y="81" width="85" height="30"/>
+                                        <state key="normal" title="openInMenu"/>
+                                        <connections>
+                                            <action selector="documentInteractionControllerOpenInMenuTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z29-dT-fa8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wbN-Q2-Ppa">
+                                <rect key="frame" x="184" y="275" width="233" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Wri-We-E1D"/>
+                                    <constraint firstAttribute="width" constant="233" id="xf5-TD-Ul4"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="FRQ-GZ-nqc">
+                                <rect key="frame" x="160" y="30" width="280" height="210"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2P-ED-7ZB">
-                                        <rect key="frame" x="74" y="0.0" width="131" height="30"/>
+                                        <rect key="frame" x="75" y="0.0" width="131" height="30"/>
                                         <state key="normal" title="View in UIWebView"/>
                                         <connections>
                                             <action selector="uiWebviewTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WXk-Dt-ITQ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehg-2s-BGg">
-                                        <rect key="frame" x="69" y="50" width="141" height="30"/>
+                                        <rect key="frame" x="70" y="45" width="141" height="30"/>
                                         <state key="normal" title="View in WKWebView"/>
                                         <connections>
                                             <action selector="wkWebviewTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kOq-2Q-Ycl"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3e-nl-Hsu">
-                                        <rect key="frame" x="42" y="100" width="195" height="30"/>
+                                        <rect key="frame" x="43" y="90" width="195" height="30"/>
                                         <state key="normal" title="View in QLPreviewController"/>
                                         <connections>
                                             <action selector="qlPrevewControllerTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wfc-UQ-Zd0"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2pv-hq-xAf">
-                                        <rect key="frame" x="0.0" y="150" width="280" height="30"/>
+                                        <rect key="frame" x="0.0" y="135" width="280" height="30"/>
                                         <state key="normal" title="View in UIDocumentInteractionController"/>
                                         <connections>
                                             <action selector="uiDocumentInteractionControllerTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZaX-ac-YIA"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTB-aS-7C9">
-                                        <rect key="frame" x="75" y="200" width="130" height="30"/>
+                                        <rect key="frame" x="75" y="180" width="130" height="30"/>
                                         <state key="normal" title="View in VFRReader"/>
                                         <connections>
                                             <action selector="vfrReaderTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8K9-fF-L6o"/>
@@ -60,8 +93,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="WTU-ui-XI7" firstAttribute="top" secondItem="wbN-Q2-Ppa" secondAttribute="bottom" constant="35" id="3rx-Rj-LI3"/>
                             <constraint firstItem="FRQ-GZ-nqc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="68W-Xh-nw5"/>
-                            <constraint firstItem="FRQ-GZ-nqc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vM1-Pe-wob"/>
+                            <constraint firstItem="wbN-Q2-Ppa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7bv-A1-cC6"/>
+                            <constraint firstItem="WTU-ui-XI7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CGV-wZ-sj3"/>
+                            <constraint firstItem="wbN-Q2-Ppa" firstAttribute="top" secondItem="FRQ-GZ-nqc" secondAttribute="bottom" constant="35" id="Lgv-AU-lzN"/>
+                            <constraint firstItem="wbN-Q2-Ppa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="w2m-75-AH0"/>
                         </constraints>
                     </view>
                 </viewController>

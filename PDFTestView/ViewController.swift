@@ -73,6 +73,26 @@ class ViewController: UIViewController {
     @IBAction func vfrReaderTapped(sender: UIButton) {
     }
     
+    
+    @IBAction func documentInteractionControllerOptionTapped(sender: UIButton) {
+        let urlPickedFuture = selectDocument(sender)
+        urlPickedFuture.onSuccess { url in
+            self.docController = UIDocumentInteractionController(URL: url)
+            self.docController.presentOptionsMenuFromRect(sender.frame, inView: sender.superview!, animated: true)
+            self.docController.presentPreviewAnimated(true)
+        }
+    }
+    
+    
+    @IBAction func documentInteractionControllerOpenInMenuTapped(sender: UIButton) {
+        let urlPickedFuture = selectDocument(sender)
+        urlPickedFuture.onSuccess { url in
+            self.docController = UIDocumentInteractionController(URL: url)
+            self.docController.presentOpenInMenuFromRect(sender.frame, inView: sender.superview!, animated: true)
+            self.docController.presentPreviewAnimated(true)
+        }
+    }
+    
     // MARK - helpers
     
     func instantiateViewerController<T>() -> T {
