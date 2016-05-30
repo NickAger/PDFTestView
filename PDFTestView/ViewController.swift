@@ -24,10 +24,10 @@ class ViewController: UIViewController {
     
     @IBAction func uiWebviewTapped(sender: UIButton) {
         let urlPickedFuture = selectDocument(sender)
-        urlPickedFuture.onSuccess { url in
+        urlPickedFuture.onSuccess { urlHolder in
             let pdfViewerController = PDFViewerViewController<UIWebView>()
             pdfViewerController.title = "UIWebView"
-            pdfViewerController.fileURL = url
+            pdfViewerController.urlHolder = urlHolder
             pdfViewerController.setupView = { (view: UIWebView, fileURL: NSURL) in
                 let request = NSURLRequest(URL: fileURL)
                 view.loadRequest(request)
@@ -38,10 +38,10 @@ class ViewController: UIViewController {
     
     @IBAction func wkWebviewTapped(sender: UIButton) {
         let urlPickedFuture = selectDocument(sender)
-        urlPickedFuture.onSuccess { url in
+        urlPickedFuture.onSuccess { urlHolder in
             let pdfViewerController = PDFViewerViewController<WKWebView>()
             pdfViewerController.title = "WKWebView"
-            pdfViewerController.fileURL = url
+            pdfViewerController.urlHolder = urlHolder
             pdfViewerController.setupView = { (view: WKWebView, fileURL: NSURL) in
                 view.loadFileURL(fileURL, allowingReadAccessToURL: fileURL)
             }
@@ -51,10 +51,10 @@ class ViewController: UIViewController {
     
     @IBAction func qlPrevewControllerTapped(sender: UIButton) {
         let urlPickedFuture = selectDocument(sender)
-        urlPickedFuture.onSuccess { url in
+        urlPickedFuture.onSuccess { urlHolder in
             let ql = QLPreviewController()
         
-            let delegate = QLDelegate(fileUrl: url)
+            let delegate = QLDelegate(urlHolder: urlHolder)
             ql.dataSource = delegate
             ql.delegate = delegate
             self.presentViewController(ql, animated: true, completion: nil)
@@ -63,26 +63,28 @@ class ViewController: UIViewController {
     
     @IBAction func uiDocumentInteractionControllerTapped(sender: UIButton) {
         let urlPickedFuture = selectDocument(sender)
-        urlPickedFuture.onSuccess { url in
-            self.docController = UIDocumentInteractionController(URL: url)
-            self.docController.delegate = self
+        urlPickedFuture.onSuccess { urlHolder in
+            self.docController = UIDocumentInteractionController(URL: urlHolder.fileURL)
+            self.docController.delegate = DocumentInteractionControllerDelegateImp(urlHolder: urlHolder, viewController: self)
             self.docController.presentPreviewAnimated(true)
         }
     }
     
     @IBAction func vfrReaderTapped(sender: UIButton) {
         let urlPickedFuture = selectDocument(sender)
-        urlPickedFuture.onSuccess { url in
-            let document = ReaderDocument.withDocumentFilePath(url.absoluteString, password: nil)
+        urlPickedFuture.onSuccess { urlHolder in
+            let document = ReaderDocument(filePath:urlHolder.fileURL.path!, password: nil)
             let controller = ReaderViewController(readerDocument: document)
+            controller.delegate = ReaderViewControllerDelegateImp(urlHolder: urlHolder)
             self.presentViewController(controller, animated: true, completion: nil)
         }
     }
     
     @IBAction func documentInteractionControllerOptionTapped(sender: UIButton) {
         let urlPickedFuture = selectDocument(sender)
-        urlPickedFuture.onSuccess { url in
-            self.docController = UIDocumentInteractionController(URL: url)
+        urlPickedFuture.onSuccess { urlHolder in
+            self.docController = UIDocumentInteractionController(URL: urlHolder.fileURL)
+            self.docController.delegate = DocumentInteractionControllerDelegateImp(urlHolder: urlHolder, viewController: self)
             self.docController.presentOptionsMenuFromRect(sender.frame, inView: sender.superview!, animated: true)
             self.docController.presentPreviewAnimated(true)
         }
@@ -90,8 +92,9 @@ class ViewController: UIViewController {
     
     @IBAction func documentInteractionControllerOpenInMenuTapped(sender: UIButton) {
         let urlPickedFuture = selectDocument(sender)
-        urlPickedFuture.onSuccess { url in
-            self.docController = UIDocumentInteractionController(URL: url)
+        urlPickedFuture.onSuccess { urlHolder in
+            self.docController = UIDocumentInteractionController(URL: urlHolder.fileURL)
+            self.docController.delegate = DocumentInteractionControllerDelegateImp(urlHolder: urlHolder, viewController: self)
             self.docController.presentOpenInMenuFromRect(sender.frame, inView: sender.superview!, animated: true)
             self.docController.presentPreviewAnimated(true)
         }
@@ -105,24 +108,26 @@ class ViewController: UIViewController {
         return pdfViewerController
     }
 
-    func selectDocument(sender: UIButton) -> Future<NSURL, AnyError> {
-        let promise = Promise<NSURL, AnyError>()
+    func selectDocument(sender: UIButton) -> Future<SecurityScopedURLHolder, AnyError> {
+        let promise = Promise<SecurityScopedURLHolder, AnyError>()
         
         let urlPickedFuture = NADocumentPicker.show(from: sender, parentViewController: self, documentTypes:[kUTTypePDF as String/*,  "com.apple.iWork.Keynote.key"*/])
         
         urlPickedFuture.onComplete { value in
             switch (value) {
             case let .Success(fileURL):
-                if !fileURL.startAccessingSecurityScopedResource() {
+                let result = SecurityScopedURLHolder.create(fileURL)
+
+                if case .Failure(_) = result {
                     let filename = fileURL.absoluteURL.lastPathComponent!
                     let alertController  = UIAlertController(title:"Unable to load PDF" , message: "Can't load file: '\(filename)'", preferredStyle: .Alert)
                     let cancelAction = UIAlertAction(title: "OK", style: .Cancel) { (_) -> () in
-                        promise.failure(FileLoadErrors.UnableStartSecurityScopedResource.asAnyError())
+                        promise.complete(result)
                     }
                     alertController.addAction(cancelAction)
                     self.presentViewController(alertController, animated: true, completion: nil)
                 } else {
-                    promise.success(fileURL)
+                    promise.complete(result)
                 }
                 
             case let .Failure(error):
@@ -134,13 +139,4 @@ class ViewController: UIViewController {
     }
 }
 
-enum FileLoadErrors : ErrorType, AnyErrorConverter {
-    case UnableStartSecurityScopedResource
-}
-
-extension ViewController: UIDocumentInteractionControllerDelegate {
-    func documentInteractionControllerViewControllerForPreview(_: UIDocumentInteractionController) -> UIViewController {
-        return self
-    }
-}
 

@@ -8,15 +8,16 @@
 
 import UIKit
 import QuickLook
+import NACommonUtils
 
-class QLDelegate : NSObject, QLPreviewControllerDataSource, QLPreviewControllerDelegate {
-    let fileUrl : NSURL
+final class QLDelegate : NSObject, QLPreviewControllerDataSource, QLPreviewControllerDelegate, KeepInMemoryMixin {
+    let urlHolder : SecurityScopedURLHolder
     var keepInMemory: QLDelegate?
     
-    init(fileUrl: NSURL) {
-        self.fileUrl = fileUrl
+    init(urlHolder: SecurityScopedURLHolder) {
+        self.urlHolder = urlHolder
         super.init()
-        keepInMemory = self
+        keepOurselvesInMemory()
     }
     
     @objc func numberOfPreviewItemsInPreviewController(controller: QLPreviewController) -> Int {
@@ -24,10 +25,10 @@ class QLDelegate : NSObject, QLPreviewControllerDataSource, QLPreviewControllerD
     }
     
     @objc func previewController(controller: QLPreviewController, previewItemAtIndex index: Int) -> QLPreviewItem {
-        return fileUrl
+        return urlHolder.fileURL
     }
     
     @objc func previewControllerDidDismiss(controller: QLPreviewController) {
-        keepInMemory = nil
+        freeOurselvesFromMemory()
     }
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 class PDFViewerViewController<T: UIView>: UIViewController {
-    var fileURL: NSURL!
+    var urlHolder: SecurityScopedURLHolder!
     var targetView: T!
     var setupView: ((view: T, fileURL: NSURL) -> ())!
     
@@ -22,7 +22,7 @@ class PDFViewerViewController<T: UIView>: UIViewController {
         
         self.view.backgroundColor = UIColor.whiteColor()
         setupViews()
-        setupView(view: targetView, fileURL: fileURL)
+        setupView(view: targetView, fileURL: urlHolder.fileURL)
     }
     
     func setupViews() {
@@ -53,7 +53,6 @@ class PDFViewerViewController<T: UIView>: UIViewController {
     }
     
     @IBAction func closeButtonPressed(sender: UIBarButtonItem) {
-        fileURL.stopAccessingSecurityScopedResource()
         dismissViewControllerAnimated(true, completion: nil)
     }
 }

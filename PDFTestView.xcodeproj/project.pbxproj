@@ -20,6 +20,9 @@
 		849D95831CF96CC100EF8CB9 /* NADocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D95821CF96CC100EF8CB9 /* NADocumentPicker.swift */; };
 		849D95871CF97AC500EF8CB9 /* PDFViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D95861CF97AC500EF8CB9 /* PDFViewerViewController.swift */; };
 		849D95891CFBA96200EF8CB9 /* QLDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D95881CFBA96100EF8CB9 /* QLDelegate.swift */; };
+		849D958E1CFC542400EF8CB9 /* SecurityScopedURLHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D958D1CFC542400EF8CB9 /* SecurityScopedURLHolder.swift */; };
+		849D95901CFC69E700EF8CB9 /* DocumentInteractionControllerDelegateImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D958F1CFC69E700EF8CB9 /* DocumentInteractionControllerDelegateImp.swift */; };
+		849D95921CFC6D3700EF8CB9 /* ReaderViewControllerDelegateImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D95911CFC6D3700EF8CB9 /* ReaderViewControllerDelegateImp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,9 @@
 		849D95821CF96CC100EF8CB9 /* NADocumentPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NADocumentPicker.swift; sourceTree = "<group>"; };
 		849D95861CF97AC500EF8CB9 /* PDFViewerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFViewerViewController.swift; sourceTree = "<group>"; };
 		849D95881CFBA96100EF8CB9 /* QLDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QLDelegate.swift; sourceTree = "<group>"; };
+		849D958D1CFC542400EF8CB9 /* SecurityScopedURLHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurityScopedURLHolder.swift; sourceTree = "<group>"; };
+		849D958F1CFC69E700EF8CB9 /* DocumentInteractionControllerDelegateImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentInteractionControllerDelegateImp.swift; sourceTree = "<group>"; };
+		849D95911CFC6D3700EF8CB9 /* ReaderViewControllerDelegateImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderViewControllerDelegateImp.swift; sourceTree = "<group>"; };
 		AA2BB3111C5F96B5C8680B64 /* Pods-PDFTestViewUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PDFTestViewUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PDFTestViewUITests/Pods-PDFTestViewUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D38F98414AF667A5240FE363 /* Pods-PDFTestViewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PDFTestViewTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PDFTestViewTests/Pods-PDFTestViewTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,6 +160,9 @@
 				849D955C1CF96B4600EF8CB9 /* LaunchScreen.storyboard */,
 				849D955F1CF96B4600EF8CB9 /* Info.plist */,
 				849D95881CFBA96100EF8CB9 /* QLDelegate.swift */,
+				849D958D1CFC542400EF8CB9 /* SecurityScopedURLHolder.swift */,
+				849D958F1CFC69E700EF8CB9 /* DocumentInteractionControllerDelegateImp.swift */,
+				849D95911CFC6D3700EF8CB9 /* ReaderViewControllerDelegateImp.swift */,
 			);
 			path = PDFTestView;
 			sourceTree = "<group>";
@@ -446,9 +455,12 @@
 			files = (
 				849D95561CF96B4600EF8CB9 /* ViewController.swift in Sources */,
 				849D95541CF96B4600EF8CB9 /* AppDelegate.swift in Sources */,
+				849D95901CFC69E700EF8CB9 /* DocumentInteractionControllerDelegateImp.swift in Sources */,
+				849D95921CFC6D3700EF8CB9 /* ReaderViewControllerDelegateImp.swift in Sources */,
 				849D95891CFBA96200EF8CB9 /* QLDelegate.swift in Sources */,
 				849D95831CF96CC100EF8CB9 /* NADocumentPicker.swift in Sources */,
 				849D95871CF97AC500EF8CB9 /* PDFViewerViewController.swift in Sources */,
+				849D958E1CFC542400EF8CB9 /* SecurityScopedURLHolder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
