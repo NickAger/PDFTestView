@@ -3,16 +3,19 @@ PODS:
     - Result (~> 2.0)
   - NACommonUtils (1.0.10)
   - Result (2.0.0)
+  - vfrReader (2.8.6)
 
 DEPENDENCIES:
   - BrightFutures
   - NACommonUtils
+  - vfrReader
 
 SPEC CHECKSUMS:
   BrightFutures: e18b83fd6fa8562ceb9902ee609f0de23b0ee110
   NACommonUtils: 6f32f31eae84e11448b1ab80ad8ed33e0230cff1
   Result: 9e75e1111c774c6ac594e14907b15057053a7959
+  vfrReader: 94ea739a545e39093c93802ca1c5b203a5df46b1
 
-PODFILE CHECKSUM: f32491589bf58c79e2c1ce1ff540c5da6c012430
+PODFILE CHECKSUM: 5b52cdb3a83634cb880993b5cec79cde16520f4a
 
 COCOAPODS: 1.0.0

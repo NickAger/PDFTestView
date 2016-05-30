@@ -13,6 +13,7 @@ import BrightFutures
 import NACommonUtils
 import WebKit
 import QuickLook
+import vfrReader
 
 class ViewController: UIViewController {
     var docController:UIDocumentInteractionController!
@@ -65,14 +66,18 @@ class ViewController: UIViewController {
         urlPickedFuture.onSuccess { url in
             self.docController = UIDocumentInteractionController(URL: url)
             self.docController.delegate = self
-//            self.docController.presentOptionsMenuFromRect(sender.frame, inView: sender.superview!, animated: true)
             self.docController.presentPreviewAnimated(true)
         }
     }
     
     @IBAction func vfrReaderTapped(sender: UIButton) {
+        let urlPickedFuture = selectDocument(sender)
+        urlPickedFuture.onSuccess { url in
+            let document = ReaderDocument.withDocumentFilePath(url.absoluteString, password: nil)
+            let controller = ReaderViewController(readerDocument: document)
+            self.presentViewController(controller, animated: true, completion: nil)
+        }
     }
-    
     
     @IBAction func documentInteractionControllerOptionTapped(sender: UIButton) {
         let urlPickedFuture = selectDocument(sender)
@@ -82,7 +87,6 @@ class ViewController: UIViewController {
             self.docController.presentPreviewAnimated(true)
         }
     }
-    
     
     @IBAction func documentInteractionControllerOpenInMenuTapped(sender: UIButton) {
         let urlPickedFuture = selectDocument(sender)
