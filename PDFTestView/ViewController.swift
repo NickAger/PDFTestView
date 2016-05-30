@@ -15,6 +15,7 @@ import WebKit
 import QuickLook
 
 class ViewController: UIViewController {
+    var docController:UIDocumentInteractionController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +61,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func uiDocumentInteractionControllerTapped(sender: UIButton) {
+        let urlPickedFuture = selectDocument(sender)
+        urlPickedFuture.onSuccess { url in
+            self.docController = UIDocumentInteractionController(URL: url)
+            self.docController.delegate = self
+//            self.docController.presentOptionsMenuFromRect(sender.frame, inView: sender.superview!, animated: true)
+            self.docController.presentPreviewAnimated(true)
+        }
     }
     
     @IBAction func vfrReaderTapped(sender: UIButton) {
@@ -76,7 +84,7 @@ class ViewController: UIViewController {
     func selectDocument(sender: UIButton) -> Future<NSURL, AnyError> {
         let promise = Promise<NSURL, AnyError>()
         
-        let urlPickedFuture = NADocumentPicker.show(from: sender, parentViewController: self, documentTypes:[kUTTypePDF as String, "com.apple.keynote.key", "com.apple.iWork.Keynote.key"])
+        let urlPickedFuture = NADocumentPicker.show(from: sender, parentViewController: self, documentTypes:[kUTTypePDF as String/*,  "com.apple.iWork.Keynote.key"*/])
         
         urlPickedFuture.onComplete { value in
             switch (value) {
@@ -104,5 +112,11 @@ class ViewController: UIViewController {
 
 enum FileLoadErrors : ErrorType, AnyErrorConverter {
     case UnableStartSecurityScopedResource
+}
+
+extension ViewController: UIDocumentInteractionControllerDelegate {
+    func documentInteractionControllerViewControllerForPreview(_: UIDocumentInteractionController) -> UIViewController {
+        return self
+    }
 }
 
