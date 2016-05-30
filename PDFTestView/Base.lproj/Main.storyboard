@@ -37,6 +37,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3e-nl-Hsu">
                                         <rect key="frame" x="42" y="100" width="195" height="30"/>
                                         <state key="normal" title="View in QLPreviewController"/>
+                                        <connections>
+                                            <action selector="qlPrevewControllerTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wfc-UQ-Zd0"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2pv-hq-xAf">
                                         <rect key="frame" x="0.0" y="150" width="280" height="30"/>

@@ -12,6 +12,7 @@ import MobileCoreServices
 import BrightFutures
 import NACommonUtils
 import WebKit
+import QuickLook
 
 class ViewController: UIViewController {
 
@@ -40,14 +41,22 @@ class ViewController: UIViewController {
             pdfViewerController.title = "WKWebView"
             pdfViewerController.fileURL = url
             pdfViewerController.setupView = { (view: WKWebView, fileURL: NSURL) in
-                let request = NSURLRequest(URL: fileURL)
-                view.loadRequest(request)
+                view.loadFileURL(fileURL, allowingReadAccessToURL: fileURL)
             }
             self.presentViewController(pdfViewerController, animated: true, completion: nil)
         }
     }
     
     @IBAction func qlPrevewControllerTapped(sender: UIButton) {
+        let urlPickedFuture = selectDocument(sender)
+        urlPickedFuture.onSuccess { url in
+            let ql = QLPreviewController()
+        
+            let delegate = QLDelegate(fileUrl: url)
+            ql.dataSource = delegate
+            ql.delegate = delegate
+            self.presentViewController(ql, animated: true, completion: nil)
+        }
     }
     
     @IBAction func uiDocumentInteractionControllerTapped(sender: UIButton) {
@@ -67,7 +76,7 @@ class ViewController: UIViewController {
     func selectDocument(sender: UIButton) -> Future<NSURL, AnyError> {
         let promise = Promise<NSURL, AnyError>()
         
-        let urlPickedFuture = NADocumentPicker.show(from: sender, parentViewController: self, documentTypes:[kUTTypePDF as String])
+        let urlPickedFuture = NADocumentPicker.show(from: sender, parentViewController: self, documentTypes:[kUTTypePDF as String, "com.apple.keynote.key", "com.apple.iWork.Keynote.key"])
         
         urlPickedFuture.onComplete { value in
             switch (value) {
@@ -96,3 +105,4 @@ class ViewController: UIViewController {
 enum FileLoadErrors : ErrorType, AnyErrorConverter {
     case UnableStartSecurityScopedResource
 }
+

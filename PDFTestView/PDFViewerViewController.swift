@@ -45,9 +45,9 @@ class PDFViewerViewController<T: UIView>: UIViewController {
         
         let navigationItem = UINavigationItem(title: title!)
         
-        let rightButton =  UIBarButtonItem(title: "Close", style:   UIBarButtonItemStyle.Done, target: self, action: #selector(closeButtonPressed(_:)))
+        let leftButton =  UIBarButtonItem(title: "Done", style:   UIBarButtonItemStyle.Done, target: self, action: #selector(closeButtonPressed(_:)))
         
-        navigationItem.rightBarButtonItem = rightButton
+        navigationItem.leftBarButtonItem = leftButton
         navigationBar.items = [navigationItem]
         return navigationBar
     }
