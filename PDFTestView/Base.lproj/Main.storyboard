@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D8b-7K-3vT">
-                                <rect key="frame" x="36" y="28" width="544" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D8b-7K-3vT">
+                                <rect key="frame" x="36" y="8" width="544" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="yue-i2-uUd"/>
                                 </constraints>
@@ -28,8 +28,8 @@
                                     <action selector="chooseFilePressed:" destination="olZ-Wd-DjQ" eventType="touchUpInside" id="ax4-7D-pAt"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="No file choosen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luH-Rl-M3r">
-                                <rect key="frame" x="36" y="56" width="544" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No file choosen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luH-Rl-M3r">
+                                <rect key="frame" x="36" y="36" width="544" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="L52-p6-H9n"/>
                                 </constraints>
@@ -37,15 +37,15 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xsl-Pv-soU" customClass="NATableView" customModule="NATableView">
-                                <rect key="frame" x="20" y="90" width="560" height="502"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xsl-Pv-soU" customClass="NATableView" customModule="NATableView">
+                                <rect key="frame" x="20" y="70" width="560" height="522"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Xsl-Pv-soU" firstAttribute="trailing" secondItem="dWB-k7-ZqL" secondAttribute="trailingMargin" id="4Lm-l4-Y0q"/>
-                            <constraint firstItem="D8b-7K-3vT" firstAttribute="top" secondItem="3ia-Ka-35c" secondAttribute="bottom" constant="8" id="PnL-pc-ImL"/>
+                            <constraint firstItem="D8b-7K-3vT" firstAttribute="top" secondItem="dWB-k7-ZqL" secondAttribute="topMargin" constant="8" id="FIs-56-EbZ"/>
                             <constraint firstItem="D8b-7K-3vT" firstAttribute="leading" secondItem="dWB-k7-ZqL" secondAttribute="leadingMargin" constant="16" id="Vls-9C-19u"/>
                             <constraint firstItem="luH-Rl-M3r" firstAttribute="trailing" secondItem="dWB-k7-ZqL" secondAttribute="trailingMargin" id="cWY-E0-BJi"/>
                             <constraint firstItem="Xsl-Pv-soU" firstAttribute="top" secondItem="luH-Rl-M3r" secondAttribute="bottom" constant="18" id="fyE-4d-k5P"/>
