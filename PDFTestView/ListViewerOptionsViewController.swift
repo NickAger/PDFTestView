@@ -17,6 +17,7 @@ import vfrReader
 
 class ListViewerOptionsViewController: UIViewController {
     var urlHolder: SecurityScopedURLHolder?
+    private var collapseDetailViewController = true
     
     @IBOutlet var fileChoosenLabel: UILabel!
     @IBOutlet var tableView: NATableView!
@@ -28,6 +29,8 @@ class ListViewerOptionsViewController: UIViewController {
         navigationItem.title = "Select a PDF Viewer"
         configureTableView()
         tableView.hidden = true // hidden until urlHolder is valid hmmm ReactiveCocoa would be useful...
+        
+        splitViewController?.delegate = self
     }
 
     @IBAction func chooseFilePressed(sender: UIButton) {
@@ -54,6 +57,7 @@ class ListViewerOptionsViewController: UIViewController {
                 self.splitViewController?.preferredDisplayMode = .Automatic
             }
             self.splitViewController?.toggleMasterView()
+            self.collapseDetailViewController = false
         }
     }
     
@@ -188,7 +192,12 @@ class ListViewerOptionsViewController: UIViewController {
     }
 }
 
-
+// see http://nshipster.com/uisplitviewcontroller/ - for iphone in portrait, ensures the master view is displayed initially
+extension ListViewerOptionsViewController: UISplitViewControllerDelegate {
+    func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController: UIViewController, ontoPrimaryViewController primaryViewController: UIViewController) -> Bool {
+        return collapseDetailViewController
+    }
+}
 
 extension UISplitViewController {
     func toggleMasterView() {
