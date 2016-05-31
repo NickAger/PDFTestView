@@ -4,6 +4,7 @@ use_frameworks!
 
 target 'PDFTestView' do
   pod 'NACommonUtils'
+  pod 'NATableView'
   pod 'BrightFutures'
   pod 'vfrReader'
 end

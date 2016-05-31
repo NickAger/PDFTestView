@@ -27,8 +27,4 @@ final class QLDelegate : NSObject, QLPreviewControllerDataSource, QLPreviewContr
     @objc func previewController(controller: QLPreviewController, previewItemAtIndex index: Int) -> QLPreviewItem {
         return urlHolder.fileURL
     }
-    
-    @objc func previewControllerDidDismiss(controller: QLPreviewController) {
-        freeOurselvesFromMemory()
-    }
 }

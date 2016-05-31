@@ -2,20 +2,23 @@ PODS:
   - BrightFutures (4.1.0):
     - Result (~> 2.0)
   - NACommonUtils (1.0.10)
+  - NATableView (1.0.0)
   - Result (2.0.0)
   - vfrReader (2.8.6)
 
 DEPENDENCIES:
   - BrightFutures
   - NACommonUtils
+  - NATableView
   - vfrReader
 
 SPEC CHECKSUMS:
   BrightFutures: e18b83fd6fa8562ceb9902ee609f0de23b0ee110
   NACommonUtils: 6f32f31eae84e11448b1ab80ad8ed33e0230cff1
+  NATableView: ba4874a2540d56ba43efc76142a0ba50278d2236
   Result: 9e75e1111c774c6ac594e14907b15057053a7959
   vfrReader: 94ea739a545e39093c93802ca1c5b203a5df46b1
 
-PODFILE CHECKSUM: 5b52cdb3a83634cb880993b5cec79cde16520f4a
+PODFILE CHECKSUM: 05b3edd29c95671e6cc8e26b3906366028dfdfa7
 
 COCOAPODS: 1.0.0

@@ -11,7 +11,6 @@
 		4A1E1A5CC456B1D244ACD0DE /* Pods_PDFTestViewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60A5FBA08463B6BFD393926B /* Pods_PDFTestViewTests.framework */; };
 		4CB4F54AF4BECF0FCF083295 /* Pods_PDFTestView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 389DE503A17ED7692F88D54F /* Pods_PDFTestView.framework */; };
 		849D95541CF96B4600EF8CB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D95531CF96B4600EF8CB9 /* AppDelegate.swift */; };
-		849D95561CF96B4600EF8CB9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D95551CF96B4600EF8CB9 /* ViewController.swift */; };
 		849D95591CF96B4600EF8CB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849D95571CF96B4600EF8CB9 /* Main.storyboard */; };
 		849D955B1CF96B4600EF8CB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849D955A1CF96B4600EF8CB9 /* Assets.xcassets */; };
 		849D955E1CF96B4600EF8CB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849D955C1CF96B4600EF8CB9 /* LaunchScreen.storyboard */; };
@@ -23,6 +22,8 @@
 		849D958E1CFC542400EF8CB9 /* SecurityScopedURLHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D958D1CFC542400EF8CB9 /* SecurityScopedURLHolder.swift */; };
 		849D95901CFC69E700EF8CB9 /* DocumentInteractionControllerDelegateImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D958F1CFC69E700EF8CB9 /* DocumentInteractionControllerDelegateImp.swift */; };
 		849D95921CFC6D3700EF8CB9 /* ReaderViewControllerDelegateImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D95911CFC6D3700EF8CB9 /* ReaderViewControllerDelegateImp.swift */; };
+		849D95981CFD2B7900EF8CB9 /* ListViewerOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D95971CFD2B7900EF8CB9 /* ListViewerOptionsViewController.swift */; };
+		84D10C5A1CFD89A3004BBF8D /* DetailPDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D10C591CFD89A3004BBF8D /* DetailPDFViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +53,6 @@
 		7C59BFFD42598ABC64FB0A98 /* Pods-PDFTestView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PDFTestView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PDFTestView/Pods-PDFTestView.debug.xcconfig"; sourceTree = "<group>"; };
 		849D95501CF96B4600EF8CB9 /* PDFTestView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDFTestView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849D95531CF96B4600EF8CB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		849D95551CF96B4600EF8CB9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		849D95581CF96B4600EF8CB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		849D955A1CF96B4600EF8CB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		849D955D1CF96B4600EF8CB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -70,6 +70,8 @@
 		849D958D1CFC542400EF8CB9 /* SecurityScopedURLHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurityScopedURLHolder.swift; sourceTree = "<group>"; };
 		849D958F1CFC69E700EF8CB9 /* DocumentInteractionControllerDelegateImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentInteractionControllerDelegateImp.swift; sourceTree = "<group>"; };
 		849D95911CFC6D3700EF8CB9 /* ReaderViewControllerDelegateImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderViewControllerDelegateImp.swift; sourceTree = "<group>"; };
+		849D95971CFD2B7900EF8CB9 /* ListViewerOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewerOptionsViewController.swift; sourceTree = "<group>"; };
+		84D10C591CFD89A3004BBF8D /* DetailPDFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPDFViewController.swift; sourceTree = "<group>"; };
 		AA2BB3111C5F96B5C8680B64 /* Pods-PDFTestViewUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PDFTestViewUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PDFTestViewUITests/Pods-PDFTestViewUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D38F98414AF667A5240FE363 /* Pods-PDFTestViewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PDFTestViewTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PDFTestViewTests/Pods-PDFTestViewTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,7 +154,6 @@
 			children = (
 				849D95811CF96B5900EF8CB9 /* PDFTestView.entitlements */,
 				849D95531CF96B4600EF8CB9 /* AppDelegate.swift */,
-				849D95551CF96B4600EF8CB9 /* ViewController.swift */,
 				849D95571CF96B4600EF8CB9 /* Main.storyboard */,
 				849D95861CF97AC500EF8CB9 /* PDFViewerViewController.swift */,
 				849D95821CF96CC100EF8CB9 /* NADocumentPicker.swift */,
@@ -163,6 +164,8 @@
 				849D958D1CFC542400EF8CB9 /* SecurityScopedURLHolder.swift */,
 				849D958F1CFC69E700EF8CB9 /* DocumentInteractionControllerDelegateImp.swift */,
 				849D95911CFC6D3700EF8CB9 /* ReaderViewControllerDelegateImp.swift */,
+				849D95971CFD2B7900EF8CB9 /* ListViewerOptionsViewController.swift */,
+				84D10C591CFD89A3004BBF8D /* DetailPDFViewController.swift */,
 			);
 			path = PDFTestView;
 			sourceTree = "<group>";
@@ -453,12 +456,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				849D95561CF96B4600EF8CB9 /* ViewController.swift in Sources */,
+				84D10C5A1CFD89A3004BBF8D /* DetailPDFViewController.swift in Sources */,
 				849D95541CF96B4600EF8CB9 /* AppDelegate.swift in Sources */,
 				849D95901CFC69E700EF8CB9 /* DocumentInteractionControllerDelegateImp.swift in Sources */,
 				849D95921CFC6D3700EF8CB9 /* ReaderViewControllerDelegateImp.swift in Sources */,
 				849D95891CFBA96200EF8CB9 /* QLDelegate.swift in Sources */,
 				849D95831CF96CC100EF8CB9 /* NADocumentPicker.swift in Sources */,
+				849D95981CFD2B7900EF8CB9 /* ListViewerOptionsViewController.swift in Sources */,
 				849D95871CF97AC500EF8CB9 /* PDFViewerViewController.swift in Sources */,
 				849D958E1CFC542400EF8CB9 /* SecurityScopedURLHolder.swift in Sources */,
 			);
