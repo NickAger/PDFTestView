@@ -1,5 +1,5 @@
 # PDFTestView
-iOS app to allow quickly switching between various methods for previewing PDF documents.
+iOS app which allows quick switching between various methods for previewing PDF documents.
 
 ![](PDFViewerPreview.png)
 
