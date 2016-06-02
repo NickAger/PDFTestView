@@ -1,5 +1,9 @@
 # PDFTestView
-Test the various iOS ways of viewing PDFs
+Test the various iOS ways of viewing PDFs:
+
+![](PDFViewerPreview.png)
+
+
 
 Some links:
 
@@ -7,7 +11,4 @@ Some links:
 * [Document Preview in iOS with Quick Look Framework](http://kratinmobile.com/blog/index.php/document-preview-in-ios-with-quick-look-framework/)
 * [Is it possible to view a PDF file from an URL link using Quick Look Framework](http://stackoverflow.com/questions/34930142/is-it-possible-to-view-a-pdf-file-from-an-url-link-using-quick-look-framework)
 * [PDF Reader for iOS](http://stackoverflow.com/questions/13447915/pdf-reader-for-ios)
-
-
-Sample code: https://developer.apple.com/library/ios/samplecode/DocInteraction/Introduction/Intro.html
-
+* [Sample code from Apple](https://developer.apple.com/library/ios/samplecode/DocInteraction/Introduction/Intro.html)
